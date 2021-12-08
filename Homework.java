@@ -1,21 +1,51 @@
+package lesson3;
+
 public class Homework {
-    private static final int SIZE = 10000;
 
     public static void main(String[] args) {
+        int[] arr1 ={1, 2 ,3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16};
+        int[] arr2 = {1, 2, 4, 5, 6};
+        int[] arr3 = {};
 
-        Notebook[] arrNotebook = new Notebook[SIZE];
-        for (int i = 0; i < SIZE; i++) {
-            arrNotebook[i] = new MyRand().randNotebook();
+        FindNumber.missingNumber(arr1);
+        FindNumber.missingNumber(arr2);
+        FindNumber.missingNumber(arr3);
+        System.out.println("----------------------------------------");
+        MyDeque<Integer> deque = new MyDeque<Integer>(6);
 
-        }
-        System.out.println("--------------");
-        MySort.fullSort(arrNotebook);
+        deque.insertRight(1);
+        deque.display();
+        deque.insertRight(2);
+        deque.display();
+        deque.insertRight(3);
+        deque.display();
+        deque.insertLeft(1);
+        deque.display();
+        deque.insertLeft(3);
+        deque.display();
 
-        for (int i = 0; i < arrNotebook.length; i++) {
-            System.out.println(i+" "+ arrNotebook[i]);
-        }
-        System.out.println("--------------");
+        deque.insertLeft(2);
+        deque.display();
+        System.out.println(deque.insertLeft(1));
+
+        System.out.println(deque.insertLeft(1));
 
 
+        System.out.println("__________________________");
+        System.out.println(deque.removeRight());
+        deque.display();
+        System.out.println(deque.removeRight());
+        deque.display();
+        System.out.println(deque.removeRight());
+        deque.display();
+        System.out.println(deque.removeLeft());
+        deque.display();
+        System.out.println(deque.removeLeft());
+        deque.display();
+        System.out.println(deque.removeLeft());
+        deque.display();
+
+
+//        deque.display();
     }
 }
